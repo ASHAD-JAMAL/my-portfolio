@@ -36,7 +36,7 @@ function Skills() {
           <h4 className="text-[#40ffa3] font-bold text-lg">Skills</h4>
         </div>
       </div>
-      <div className="second-section flex flex-wrap gap-7 justify-center md:justify-start">
+      <div className="second-section flex flex-wrap gap-8 justify-between md:justify-start">
         {skills.map((skill, index) => (
           <Box key={index} src={skill.src} title={skill.title} />
         ))}

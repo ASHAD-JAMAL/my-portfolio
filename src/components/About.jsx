@@ -127,25 +127,32 @@ export function AccordionCustomStyles() {
 }
 function About() {
   return (
-    <div className="about flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20">
+    <div className="about flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20 gap-4">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
         <div className="flex items-center mx-4 gap-4">
           <hr className="w-32 h-2 text-white font-bold" />
           <h4 className="text-[#40ffa3] font-bold text-lg">About me</h4>
         </div>
-        <div className="py-10">
+        <div className="pt-10">
           <h1 className="font-bold text-white md:text-5xl text-2xl text-center md:text-left">
             Web Developer based in <br /> Hyderabad, India
           </h1>
           <div className="w-full max-w-3xl mx-auto px-4 py-4">
             <p className="text-white text-lg py-4  md:text-left text-justify">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
-              labore nulla, quaerat velit laborum beatae eligendi delectus harum
-              ducimus facere!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
+              error non reiciendis harum voluptatem totam, obcaecati odit rerum
+              laudantium maiores consequatur? Ex, excepturi, quisquam dolore
+              asperiores consectetur, quibusdam eveniet vero voluptatibus
+              reprehenderit perspiciatis placeat sapiente ipsam aperiam magni
+              dolor voluptatum! Quaerat omnis ex eius necessitatibus ratione
+              explicabo veritatis dolorem error beatae recusandae, aliquid ullam
+              ea amet quo magni minus distinctio praesentium in dolor earum
+              impedit nobis? Ipsam, incidunt facilis? Eveniet, quos. Earum iste
+              asperiores exercitationem accusamus sint quas ex facere!
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-800 via-teal-500 to-green-400 mt-4">
+        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-800 via-teal-500 to-green-400">
           <FaCloudDownloadAlt className="text-white text-2xl" />
         </div>
       </div>
