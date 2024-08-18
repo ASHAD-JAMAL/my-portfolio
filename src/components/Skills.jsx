@@ -29,11 +29,11 @@ function Skills() {
   ];
 
   return (
-    <div className="skills items-center justify-between md:px-20">
+    <div id="skill" className="items-center justify-between md:px-20 pt-5">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
         <div className="flex items-center mx-4 gap-4">
-          <hr className="w-32 h-2 text-white font-bold" />
-          <h4 className="text-[#40ffa3] font-bold text-lg">Skills</h4>
+          <hr className="w-32 h-2 text-white font-bold hidden md:block" />
+          <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">Skills</h4>
         </div>
       </div>
       <div className="second-section flex flex-wrap gap-8 justify-between md:justify-start">

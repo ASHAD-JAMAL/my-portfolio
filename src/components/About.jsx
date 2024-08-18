@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 
 export function AccordionCustomStyles() {
-  const [open, setOpen] = React.useState(1);
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
@@ -130,8 +130,8 @@ function About() {
     <div className="about flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20 gap-4">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
         <div className="flex items-center mx-4 gap-4">
-          <hr className="w-32 h-2 text-white font-bold" />
-          <h4 className="text-[#40ffa3] font-bold text-lg">About me</h4>
+          <hr className="w-32 h-2 text-white font-bold hidden md:block" />
+          <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">About me</h4>
         </div>
         <div className="pt-10">
           <h1 className="font-bold text-white md:text-5xl text-2xl text-center md:text-left">

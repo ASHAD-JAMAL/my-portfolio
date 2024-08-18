@@ -27,7 +27,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#home" className="flex items-center">
           Home
         </a>
       </Typography>
@@ -37,7 +37,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#about" className="flex items-center">
           About
         </a>
       </Typography>
@@ -47,7 +47,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#skills" className="flex items-center">
           Skills
         </a>
       </Typography>
@@ -57,7 +57,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#project" className="flex items-center">
           Project
         </a>
       </Typography>
@@ -95,9 +95,9 @@ export function NavbarForDropdownWithMultipleLanguages() {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? (
-              <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+              <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
             ) : (
-              <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+              <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
             )}
           </IconButton>
         </div>
