@@ -67,12 +67,11 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <Button
-          href="#"
-          className="flex items-center text-[#004080] bg-[#40ffa3] font-bold text-md"
-        >
-          Let's Talk!
-        </Button>
+        <a href="#contact">
+          <Button className="flex items-center text-[#004080] bg-[#40ffa3] font-bold text-md">
+            Let's Talk!
+          </Button>
+        </a>
       </Typography>
     </ul>
   );
@@ -86,7 +85,11 @@ export function NavbarForDropdownWithMultipleLanguages() {
             href="#"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
-            <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" variant="rounded" />
+            <Avatar
+              src="https://docs.material-tailwind.com/img/face-2.jpg"
+              alt="avatar"
+              variant="rounded"
+            />
           </Typography>
           <div className="mr-4 hidden lg:block">{navList}</div>
           <IconButton
