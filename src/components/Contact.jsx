@@ -11,6 +11,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import API from "../../environmentVariables";
 
 export function SimpleRegistrationForm() {
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ export function SimpleRegistrationForm() {
     const formData = { name, email, message };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/contact", formData);
+      const response = await axios.post(`${API}/contact`, formData);
 
       if (response.status === 201) {
         toast.success("Message sent successfully!");
