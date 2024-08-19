@@ -11,10 +11,18 @@ import logo from "../assets/logo.png";
 export function NavbarForDropdownWithMultipleLanguages() {
   const [openNav, setOpenNav] = React.useState(false);
 
+  // Handle resize and scroll events
   React.useEffect(() => {
     const handleResize = () => window.innerWidth >= 960 && setOpenNav(false);
+    const handleScroll = () => setOpenNav(false);
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const navList = (
@@ -75,28 +83,34 @@ export function NavbarForDropdownWithMultipleLanguages() {
   );
 
   return (
-    <Navbar className="sticky top-0 z-50 mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header mb-10">
-      <div className="flex items-center justify-between text-white">
-        <Typography as="a" href="#" className="cursor-pointer">
-          <img src={logo} alt="logo" className="filter brightness-0 invert w-20 h-20" />
-        </Typography>
-        <div className="mr-4 hidden lg:block">{navList}</div>
-        <IconButton
-          variant="text"
-          className="lg:hidden"
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
-          ) : (
-            <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
-          )}
-        </IconButton>
-      </div>
-      <div className={`lg:hidden ${openNav ? "block" : "hidden"}`}>
-        {navList}
-      </div>
-    </Navbar>
+    <div className="pt-10">
+      <Navbar className="mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header">
+        <div className="flex items-center justify-between text-white">
+          <Typography as="a" href="#" className="cursor-pointer">
+            <img
+              src={logo}
+              alt="logo"
+              className="filter brightness-0 invert w-20 h-20"
+            />
+          </Typography>
+          <div className="mr-4 hidden lg:block">{navList}</div>
+          <IconButton
+            variant="text"
+            className="lg:hidden"
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? (
+              <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
+            ) : (
+              <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
+            )}
+          </IconButton>
+        </div>
+        <div className={`lg:hidden ${openNav ? "block" : "hidden"}`}>
+          {navList}
+        </div>
+      </Navbar>
+    </div>
   );
 }
 

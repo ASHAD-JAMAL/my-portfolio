@@ -33,7 +33,7 @@ function ProjectBox({ src, title, heading, logo }) {
               />
             </a>
             <a
-              href="#"
+              href="https://ashad-jamal.github.io/skillBridge/"
               className="text-white bg-green-500 px-4 py-2 rounded-lg shadow-lg hover:bg-green-400 transition duration-300"
             >
               Live view →

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import {
   Card,
   Input,
@@ -8,8 +9,39 @@ import {
 } from "@material-tailwind/react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function SimpleRegistrationForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = { name, email, message };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/contact",
+        formData
+      );
+
+      if (response.status === 201) {
+        toast.success("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        toast.error("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("An error occurred while sending the message.");
+    }
+  };
+
   return (
     <Card
       color="transparent"
@@ -19,7 +51,7 @@ export function SimpleRegistrationForm() {
       <Typography variant="h4" color="white" className="text-center mb-6">
         Contact Us
       </Typography>
-      <form className="mt-8 w-full max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="mt-8 w-full max-w-md mx-auto">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
             <Typography variant="h6" color="white" className="mb-2">
@@ -28,6 +60,8 @@ export function SimpleRegistrationForm() {
             <Input
               size="lg"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="name"
               className="border-gray-300 focus:border-gray-900 text-white font-medium"
             />
@@ -39,6 +73,8 @@ export function SimpleRegistrationForm() {
             <Input
               size="lg"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="name@mail.com"
               className="border-gray-300 focus:border-gray-900 text-white font-medium"
             />
@@ -49,15 +85,21 @@ export function SimpleRegistrationForm() {
             </Typography>
             <Textarea
               size="lg"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="What can we help you with"
               className="border-gray-300 focus:border-gray-900 text-white font-thin"
             />
           </div>
         </div>
-        <Button className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md" type="submit">
+        <Button
+          className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md"
+          type="submit"
+        >
           Send me
         </Button>
       </form>
+      <ToastContainer />
     </Card>
   );
 }
