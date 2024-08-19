@@ -1,6 +1,4 @@
 import React from "react";
-import "../App.css";
-import { Avatar } from "@material-tailwind/react";
 import {
   Navbar,
   Typography,
@@ -8,15 +6,15 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/logo.png";
 
 export function NavbarForDropdownWithMultipleLanguages() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => window.innerWidth >= 960 && setOpenNav(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navList = (
@@ -57,8 +55,8 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#project" className="flex items-center">
-          Project
+        <a href="#projects" className="flex items-center">
+          Projects
         </a>
       </Typography>
       <Typography
@@ -77,38 +75,28 @@ export function NavbarForDropdownWithMultipleLanguages() {
   );
 
   return (
-    <div className="py-4 px-4">
-      <Navbar className="mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header">
-        <div className="flex items-center justify-between text-white">
-          <Typography
-            as="a"
-            href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
-          >
-            <Avatar
-              src="https://docs.material-tailwind.com/img/face-2.jpg"
-              alt="avatar"
-              variant="rounded"
-            />
-          </Typography>
-          <div className="mr-4 hidden lg:block">{navList}</div>
-          <IconButton
-            variant="text"
-            className="lg:hidden"
-            onClick={() => setOpenNav(!openNav)}
-          >
-            {openNav ? (
-              <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
-            ) : (
-              <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
-            )}
-          </IconButton>
-        </div>
-        <div className={`lg:hidden ${openNav ? "block" : "hidden"}`}>
-          {navList}
-        </div>
-      </Navbar>
-    </div>
+    <Navbar className="sticky top-0 z-50 mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header mb-10">
+      <div className="flex items-center justify-between text-white">
+        <Typography as="a" href="#" className="cursor-pointer">
+          <img src={logo} alt="logo" className="filter brightness-0 invert w-20 h-20" />
+        </Typography>
+        <div className="mr-4 hidden lg:block">{navList}</div>
+        <IconButton
+          variant="text"
+          className="lg:hidden"
+          onClick={() => setOpenNav(!openNav)}
+        >
+          {openNav ? (
+            <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
+          ) : (
+            <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
+          )}
+        </IconButton>
+      </div>
+      <div className={`lg:hidden ${openNav ? "block" : "hidden"}`}>
+        {navList}
+      </div>
+    </Navbar>
   );
 }
 

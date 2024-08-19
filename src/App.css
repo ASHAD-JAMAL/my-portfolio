@@ -4,3 +4,6 @@
 html {
   scroll-behavior: smooth;
 }
+.outline-text {
+  -webkit-text-stroke: 1px white;
+}

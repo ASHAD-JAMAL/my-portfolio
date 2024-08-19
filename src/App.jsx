@@ -1,42 +1,29 @@
-// App.jsx
-import React from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import Skills from './components/Skills';
-import Project from './components/Project';
-import Contact from './components/Contact';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
+import "./App.css";
 
 function App() {
   return (
     <>
       <Header />
-      <nav>
-        <ul>
-          <li>
-            <a href="#about" className="flex items-center font-bold">About</a>
-          </li>
-          <li>
-            <a href="#skills" className="flex items-center font-bold">Skills</a>
-          </li>
-          <li>
-            <a href="#projects" className="flex items-center font-bold">Projects</a>
-          </li>
-          <li>
-            <a href="#contact" className="flex items-center font-bold">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <div id="about">
+      <div id="home" className="pt-16"> {/* Added padding to avoid overlap */}
+        <Home />
+      </div>
+      <div id="about" className="pt-16">
         <About />
       </div>
-      <div id="skills">
+      <div id="skills" className="pt-16">
         <Skills />
       </div>
-      <div id="projects">
+      <div id="projects" className="pt-16">
         <Project />
       </div>
-      <div id="contact">
+      <div id="contact" className="pt-16">
         <Contact />
       </div>
     </>

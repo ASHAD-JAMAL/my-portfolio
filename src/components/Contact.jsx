@@ -1,5 +1,4 @@
 import React from "react";
-import { IconButton } from "@material-tailwind/react";
 import {
   Card,
   Input,
@@ -15,7 +14,7 @@ export function SimpleRegistrationForm() {
     <Card
       color="transparent"
       shadow={false}
-      className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] p-6"
+      className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] p-6 rounded-3xl"
     >
       <Typography variant="h4" color="white" className="text-center mb-6">
         Contact Us
@@ -28,8 +27,9 @@ export function SimpleRegistrationForm() {
             </Typography>
             <Input
               size="lg"
+              required
               placeholder="name"
-              className="border-gray-300 focus:border-gray-900"
+              className="border-gray-300 focus:border-gray-900 text-white font-medium"
             />
           </div>
           <div className="flex flex-col">
@@ -38,8 +38,9 @@ export function SimpleRegistrationForm() {
             </Typography>
             <Input
               size="lg"
+              required
               placeholder="name@mail.com"
-              className="border-gray-300 focus:border-gray-900"
+              className="border-gray-300 focus:border-gray-900 text-white font-medium"
             />
           </div>
           <div className="flex flex-col">
@@ -49,11 +50,11 @@ export function SimpleRegistrationForm() {
             <Textarea
               size="lg"
               placeholder="What can we help you with"
-              className="border-gray-300 focus:border-gray-900"
+              className="border-gray-300 focus:border-gray-900 text-white font-thin"
             />
           </div>
         </div>
-        <Button className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md">
+        <Button className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md" type="submit">
           Send me
         </Button>
       </form>
@@ -64,12 +65,14 @@ export function SimpleRegistrationForm() {
 function Contact() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
-      <div className="flex-1 max-w-md md:max-w-lg mx-4">
+      <div className="flex-1 max-w-md md:max-w-lg mx-4 border border-white/100 rounded-3xl shadow-lg mb-10 md:mb-0">
         <SimpleRegistrationForm />
       </div>
       <div className="flex-1 max-w-md md:max-w-lg mx-4">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-teal-500 via-green-400 to-[#34d8ac] bg-clip-text text-transparent">Get In Touch</h1>
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+            Get In Touch
+          </h1>
         </div>
         <div className="flex gap-4 justify-center">
           <a

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCloudDownloadAlt } from "react-icons/fa";
+import resume from "../assets/Jamal_Resume_2024.pdf";
 import {
   Accordion,
   AccordionHeader,
@@ -15,7 +16,7 @@ export function AccordionCustomStyles() {
     <>
       <Accordion
         open={open === 1}
-        className="mb-2 rounded-lg border border-blue-gray-100 px-4 bg-gradient-to-r from-blue-800 via-teal-500 to-green-400"
+        className="mb-4 rounded-lg border border-blue-gray-100 px-4 bg-gradient-to-r from-blue-800 via-teal-500 to-green-400"
       >
         <AccordionHeader
           onClick={() => handleOpen(1)}
@@ -44,7 +45,7 @@ export function AccordionCustomStyles() {
       </Accordion>
       <Accordion
         open={open === 2}
-        className="mb-2 rounded-lg border border-blue-gray-100 px-4 bg-gradient-to-r from-blue-800 via-teal-500 to-green-400"
+        className="mb-4 rounded-lg border border-blue-gray-100 px-4 bg-gradient-to-r from-blue-800 via-teal-500 to-green-400"
       >
         <AccordionHeader
           onClick={() => handleOpen(2)}
@@ -125,36 +126,44 @@ export function AccordionCustomStyles() {
     </>
   );
 }
+
 function About() {
   return (
-    <div className="about flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20 gap-4">
+    <div className="about flex flex-col md:flex-row items-center justify-between px-4 md:px-8 lg:px-16 py-12 md:py-20 gap-6">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
         <div className="flex items-center mx-4 gap-4">
-          <hr className="w-32 h-2 text-white font-bold hidden md:block" />
-          <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">About me</h4>
+          <hr className="w-24 h-2 text-white font-bold hidden md:block" />
+          <h4 className="text-[#40ffa3] font-bold md:text-lg text-2xl">
+            About me
+          </h4>
         </div>
-        <div className="pt-10">
-          <h1 className="font-bold text-white md:text-5xl text-2xl text-center md:text-left">
+        <div className="pt-6 md:pt-10">
+          <h1 className="font-bold text-white md:text-5xl text-3xl text-center md:text-left">
             Web Developer based in <br /> Hyderabad, India
           </h1>
           <div className="w-full max-w-3xl mx-auto px-4 py-4">
-            <p className="text-white text-lg py-4  md:text-left text-justify">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
-              error non reiciendis harum voluptatem totam, obcaecati odit rerum
-              laudantium maiores consequatur? Ex, excepturi, quisquam dolore
-              asperiores consectetur, quibusdam eveniet vero voluptatibus
-              reprehenderit perspiciatis placeat sapiente ipsam aperiam magni
-              dolor voluptatum! Quaerat omnis ex eius necessitatibus ratione
-              explicabo veritatis dolorem error beatae recusandae, aliquid ullam
-              ea amet quo magni minus distinctio praesentium in dolor earum
-              impedit nobis? Ipsam, incidunt facilis? Eveniet, quos. Earum iste
-              asperiores exercitationem accusamus sint quas ex facere!
+            <p className="text-white text-base md:text-lg py-4 md:text-left text-justify">
+              Hi, I'm Ashad Jamal, a final-year B.Tech Computer Science student
+              with a passion for full-stack development. I specialize in
+              frontend technologies like React, Vite, and Tailwind CSS, creating
+              responsive and user-friendly interfaces. I've built projects like
+              a YouTube clone and a Skill Bridge web app using the MERN stack,
+              showcasing my ability to deliver scalable and effective solutions.
+              I love solving real-world problems with clean, efficient code and
+              am always eager to learn new technologies. I'm currently seeking
+              opportunities to apply my skills in a dynamic environment where I
+              can contribute to impactful projects and continue growing as a
+              developer.
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-800 via-teal-500 to-green-400">
-          <FaCloudDownloadAlt className="text-white text-2xl" />
-        </div>
+        <a
+          href={resume}
+          download
+          className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-blue-800 via-teal-500 to-green-400"
+        >
+          <FaCloudDownloadAlt className="text-white text-lg md:text-2xl" />
+        </a>
       </div>
       <div className="second-section md:w-1/2 mt-6 md:mt-0">
         <AccordionCustomStyles />
