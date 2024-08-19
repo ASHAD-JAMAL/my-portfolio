@@ -9,8 +9,8 @@ import {
 } from "@material-tailwind/react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function SimpleRegistrationForm() {
   const [name, setName] = useState("");
@@ -23,10 +23,7 @@ export function SimpleRegistrationForm() {
     const formData = { name, email, message };
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/contact",
-        formData
-      );
+      const response = await axios.post("http://localhost:5000/api/contact", formData);
 
       if (response.status === 201) {
         toast.success("Message sent successfully!");
@@ -73,6 +70,7 @@ export function SimpleRegistrationForm() {
             <Input
               size="lg"
               required
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="name@mail.com"
@@ -92,10 +90,7 @@ export function SimpleRegistrationForm() {
             />
           </div>
         </div>
-        <Button
-          className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md"
-          type="submit"
-        >
+        <Button className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md" type="submit">
           Send me
         </Button>
       </form>
