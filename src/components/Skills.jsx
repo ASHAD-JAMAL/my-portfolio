@@ -3,7 +3,7 @@ import Box from "./Box";
 import html from "../assets/html.png";
 import css from "../assets/css.png";
 import js from "../assets/js.png";
-import react from "../assets/react.png";
+import react from "../assets/react1.png";
 import tailwind from "../assets/tailwind.png";
 import java from "../assets/java.png";
 import boot from "../assets/boot.png";

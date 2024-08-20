@@ -9,8 +9,8 @@ import {
 } from "@material-tailwind/react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import API from "../../environmentVariables";
 
 export function SimpleRegistrationForm() {
@@ -41,11 +41,7 @@ export function SimpleRegistrationForm() {
   };
 
   return (
-    <Card
-      color="transparent"
-      shadow={false}
-      className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] p-6 rounded-3xl"
-    >
+    <Card color="transparent" shadow={false} className="">
       <Typography variant="h4" color="white" className="text-center mb-6">
         Contact Us
       </Typography>
@@ -91,7 +87,10 @@ export function SimpleRegistrationForm() {
             />
           </div>
         </div>
-        <Button className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md" type="submit">
+        <Button
+          className="mt-6 w-full text-white bg-[#40ffa3] font-bold text-md"
+          type="submit"
+        >
           Send me
         </Button>
       </form>
@@ -102,13 +101,15 @@ export function SimpleRegistrationForm() {
 
 function Contact() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
-      <div className="flex-1 max-w-md md:max-w-lg mx-4 border border-white/100 rounded-3xl shadow-lg mb-10 md:mb-0">
-        <SimpleRegistrationForm />
+    <div className="flex flex-col md:flex-row justify-center items-center mx-auto p-4 md:p-8 lg:p-12">
+      <div className="w-full md:w-1/2 p-6">
+        <div className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] shadow-2xl md:border-none border rounded-3xl p-8">
+          <SimpleRegistrationForm />
+        </div>
       </div>
-      <div className="flex-1 max-w-md md:max-w-lg mx-4">
+      <div className="w-full md:w-1/2 flex flex-col items-center p-6">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
             Get In Touch
           </h1>
         </div>
@@ -117,31 +118,31 @@ function Contact() {
             href="https://linkedin.com/in/ashad-jamal"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 bg-transparent"
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 bg-transparent hover:bg-[#0077B5]"
           >
-            <FaLinkedin className="text-lg text-white" />
+            <FaLinkedin className="text-base md:text-lg text-white" />
           </a>
           <a
             href="mailto:ashadjamalhyt@gmail.com"
-            className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 bg-transparent "
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 bg-transparent hover:bg-[#D14836]"
           >
-            <AiOutlineMail className="text-lg text-white" />
+            <AiOutlineMail className="text-base md:text-lg text-white" />
           </a>
           <a
             href="https://github.com/ASHAD-JAMAL"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 bg-transparent "
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 bg-transparent hover:bg-[#181717]"
           >
-            <FaGithub className="text-lg text-white" />
+            <FaGithub className="text-base md:text-lg text-white" />
           </a>
           <a
             href="https://www.instagram.com/ashad__jamal/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 bg-transparent "
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 bg-transparent hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
           >
-            <FaInstagram className="text-lg text-white" />
+            <FaInstagram className="text-base md:text-lg text-white" />
           </a>
         </div>
       </div>

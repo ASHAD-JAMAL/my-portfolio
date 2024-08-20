@@ -11,19 +11,19 @@ function App() {
   return (
     <>
       <Header />
-      <div id="home" className="pt-16"> {/* Added padding to avoid overlap */}
+      <div id="home"> {/* Added padding to avoid overlap */}
         <Home />
       </div>
-      <div id="about" className="pt-16">
+      <div id="about">
         <About />
       </div>
-      <div id="skills" className="pt-16">
+      <div id="skills">
         <Skills />
       </div>
-      <div id="projects" className="pt-16">
+      <div id="projects">
         <Project />
       </div>
-      <div id="contact" className="pt-16">
+      <div id="contact">
         <Contact />
       </div>
     </>
