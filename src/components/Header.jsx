@@ -4,7 +4,9 @@ import {
   Typography,
   Button,
   IconButton,
+  Avatar
 } from "@material-tailwind/react";
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.png";
 
@@ -87,11 +89,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
       <Navbar className="mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header">
         <div className="flex items-center justify-between text-white">
           <Typography as="a" href="#" className="cursor-pointer">
-            <img
-              src={logo}
-              alt="logo"
-              className="filter brightness-0 invert w-20 h-20"
-            />
+          <Avatar src={logo} alt="avatar" className="filter brightness-0 invert" />
           </Typography>
           <div className="mr-4 hidden lg:block">{navList}</div>
           <IconButton

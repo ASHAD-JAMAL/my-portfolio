@@ -36,7 +36,7 @@ function Skills() {
           <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">Skills</h4>
         </div>
       </div>
-      <div className="second-section grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-6">
+      <div className="second-section grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-8 py-10">
         {skills.map((skill, index) => (
           <Box key={index} src={skill.src} title={skill.title} />
         ))}

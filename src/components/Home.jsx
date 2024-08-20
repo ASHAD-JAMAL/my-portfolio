@@ -8,7 +8,7 @@ function Home() {
         <img
           src={character}
           alt="Character"
-          className="w-40 h-40 md:w-72 md:h-72 lg:w-80 lg:h-80"
+          className="h-60 md:w-72 md:h-72 lg:w-80 lg:h-80"
         />
       </div>
       <div className="flex flex-col items-center w-full md:w-1/2 text-center">

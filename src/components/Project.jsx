@@ -20,7 +20,7 @@ function Project() {
           <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">Projects</h4>
         </div>
       </div>
-      <div className="second-section">
+      <div className="second-section py-10">
         {projects.map((project, index) => (
           <ProjectBox
             key={index}
