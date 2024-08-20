@@ -13,7 +13,7 @@ function Project() {
     },
   ];
   return (
-    <div id="project" className="items-center justify-between md:px-20 pt-5">
+    <div id="project" className="items-center justify-between md:px-20 md:pt-20 pt-64 md:pb-0 pb-24">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
         <div className="flex items-center mx-4 gap-4">
           <hr className="w-32 h-2 text-white font-bold hidden md:block" />

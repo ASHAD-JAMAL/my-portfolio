@@ -35,7 +35,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#home" className="flex items-center">
+        <a href="#home" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
           Home
         </a>
       </Typography>
@@ -45,7 +45,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#about" className="flex items-center">
+        <a href="#about" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
           About
         </a>
       </Typography>
@@ -55,7 +55,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#skills" className="flex items-center">
+        <a href="#skills" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
           Skills
         </a>
       </Typography>
@@ -65,7 +65,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
         color="white"
         className="p-1 font-medium"
       >
-        <a href="#projects" className="flex items-center">
+        <a href="#projects" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
           Projects
         </a>
       </Typography>

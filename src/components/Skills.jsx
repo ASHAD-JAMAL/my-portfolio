@@ -29,7 +29,7 @@ function Skills() {
   ];
 
   return (
-    <div id="skill" className="md:px-20 pt-5">
+    <div id="skill" className="md:py-20 py-0 md:pt-0 pt-60">
       <div className="first-section flex flex-col items-center md:items-start">
         <div className="flex items-center mx-4 gap-4">
           <hr className="w-32 h-2 text-white font-bold hidden md:block" />
