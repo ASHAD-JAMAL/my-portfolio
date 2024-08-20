@@ -129,11 +129,11 @@ export function AccordionCustomStyles() {
 
 function About() {
   return (
-    <div className="about flex flex-col md:flex-row items-center justify-between px-4 md:px-8 lg:px-16 py-52 md:pt-16 gap-6">
+    <div className="about flex flex-col md:flex-row items-center justify-between px-4 md:px-8 lg:px-16  gap-6">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
-        <div className="flex items-center mx-4 gap-4 py-10">
+        <div className="flex items-center gap-4 pt-10">
           <hr className="w-24 h-2 text-white font-bold hidden md:block" />
-          <h4 className="text-[#40ffa3] font-bold md:text-lg text-2xl">
+          <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">
             About me
           </h4>
         </div>

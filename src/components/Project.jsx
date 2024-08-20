@@ -13,9 +13,9 @@ function Project() {
     },
   ];
   return (
-    <div id="project" className="items-center justify-between md:px-20 md:pt-20 pt-64 md:pb-0 pb-24">
+    <div id="project" className="items-center justify-between md:px-20 md:pt-20">
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
-        <div className="flex items-center mx-4 gap-4">
+        <div className="flex items-center gap-4  pt-10">
           <hr className="w-32 h-2 text-white font-bold hidden md:block" />
           <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">Projects</h4>
         </div>

@@ -4,7 +4,7 @@ import github from "../assets/github.png";
 
 function ProjectBox({ src, title, heading, logo }) {
   return (
-    <div className="py-10 px-5 md:px-10 lg:px-20">
+    <div className="px-5 md:px-10 lg:px-20">
       <div className="flex flex-col lg:flex-row bg-gradient-to-r from-[#050505] via-[#000e2a] to-[#0c1b44] border border-white/100 rounded-3xl shadow-lg items-end">
         {/* Right Section (Image) */}
         <div className="w-full lg:w-1/2">

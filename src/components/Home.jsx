@@ -3,7 +3,7 @@ import character from "../assets/robo.png";
 import "../App.css";
 function Home() {
   return (
-    <div className="md:py-40">
+    <div className="md:pt-28">
       <div className="flex flex-col md:flex-row justify-center items-center p-4 md:p-8 lg:p-12 space-y-8 md:space-y-0 md:space-x-8">
         <div className="flex flex-col items-center w-full md:w-1/2">
           <img
