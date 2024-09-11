@@ -2,9 +2,9 @@ import React from "react";
 import { Avatar } from "@material-tailwind/react";
 import github from "../assets/github.png";
 
-function ProjectBox({ src, title, heading, logo }) {
+function ProjectBox({ src, title, heading, logo,link,repolink }) {
   return (
-    <div className="px-5 md:px-10 lg:px-20">
+    <div className="px-5 md:px-10 lg:px-20 mt-10">
       <div className="flex flex-col lg:flex-row bg-gradient-to-r from-[#050505] via-[#000e2a] to-[#0c1b44] border border-white/100 rounded-3xl shadow-lg items-end">
         {/* Right Section (Image) */}
         <div className="w-full lg:w-1/2">
@@ -33,7 +33,7 @@ function ProjectBox({ src, title, heading, logo }) {
 
           {/* GitHub and Live View Button */}
           <div className="flex space-x-4 items-center mt-10 mb-5 lg:my-20 cursor-pointer">
-            <a href="https://github.com/ASHAD-JAMAL">
+            <a href={repolink}>
               <Avatar
                 src={github}
                 alt="GitHub Avatar"
@@ -42,7 +42,7 @@ function ProjectBox({ src, title, heading, logo }) {
               />
             </a>
             <a
-              href="https://ashad-jamal.github.io/skillBridge/"
+              href={link}
               className="text-white bg-green-500 px-4 py-2 rounded-lg shadow-lg hover:bg-green-400 transition duration-300"
             >
               Live view →
