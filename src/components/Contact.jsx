@@ -101,19 +101,19 @@ export function SimpleRegistrationForm() {
 
 function Contact() {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center mx-auto p-4 md:p-8 lg:p-12">
+    <div className="flex flex-col md:flex-row justify-center items-center mx-auto md:p-8 lg:p-12">
       <div className="w-full md:w-1/2 p-6">
-        <div className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] shadow-2xl md:border-none border rounded-3xl p-8">
+        <div className="bg-gradient-to-r from-black via-[#000e2a] to-[#0c1b44] shadow-2xl md:border-none border md:rounded-3xl rounded-xl md:p-8 p-2">
           <SimpleRegistrationForm />
         </div>
       </div>
       <div className="w-full md:w-1/2 flex flex-col items-center p-6">
-        <div className="text-center mb-8">
+        <div className="text-center md:mb-8 mb-2">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
             Get In Touch
           </h1>
         </div>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center mb-10 md:mb-0">
           <a
             href="https://linkedin.com/in/ashad-jamal"
             target="_blank"

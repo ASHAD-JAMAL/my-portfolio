@@ -2,37 +2,30 @@ import React from "react";
 import { Avatar } from "@material-tailwind/react";
 import github from "../assets/github.png";
 
-function ProjectBox({ src, title, heading, logo,link,repolink }) {
+function ProjectBox({ src, title, heading, link, repolink }) {
   return (
-    <div className="px-5 md:px-10 lg:px-20 mt-10">
-      <div className="flex flex-col lg:flex-row bg-gradient-to-r from-[#050505] via-[#000e2a] to-[#0c1b44] border border-white/100 rounded-3xl shadow-lg items-end">
+    <div className="w-full sm:w-6/12 md:w-4/12 px-4">
+      <div className="flex flex-col bg-gradient-to-r from-[#050505] via-[#000e2a] to-[#0c1b44] border border-white/100 shadow-lg items-end rounded-xl overflow-hidden h-full">
         {/* Right Section (Image) */}
-        <div className="w-full lg:w-1/2">
-          <div className="hidden lg:flex w-24 h-24 lg:w-32 lg:h-32 justify-center items-center">
-            <img
-              src={logo}
-              alt="Project Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
+        <div className="w-full h-52 md:h-64 lg:h-72 relative">
           <img
             src={src}
             alt="Project Screenshot"
-            className="w-full h-auto lg:rounded-bl-3xl lg:rounded-tl-none lg:rounded-tr-none rounded-tl-3xl rounded-tr-3xl object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Left Section */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start px-4 lg:px-10">
-          <h1 className="text-white font-bold text-lg lg:text-2xl text-center lg:text-left py-5">
+        {/* Left Section (Content) */}
+        <div className="w-full flex flex-col justify-between px-4 py-5 flex-grow">
+          <h1 className="text-white font-bold text-lg lg:text-2xl text-center lg:text-left">
             {heading}
           </h1>
-          <p className="text-white text-sm lg:text-base text-justify">
+          <p className="text-white text-sm lg:text-base text-justify mt-2">
             {title}
           </p>
 
           {/* GitHub and Live View Button */}
-          <div className="flex space-x-4 items-center mt-10 mb-5 lg:my-20 cursor-pointer">
+          <div className="flex space-x-4 items-center mt-4 cursor-pointer">
             <a href={repolink}>
               <Avatar
                 src={github}

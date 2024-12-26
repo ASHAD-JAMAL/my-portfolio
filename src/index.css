@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these styles in your CSS file (or use Tailwind's utility classes) */
+.project-slider {
+  max-width: 1200px; /* Limit the width of the slider */
+  margin: 0 auto; /* Center the slider on the page */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* Ensure that the ProjectBox is centered within the slide */
+}

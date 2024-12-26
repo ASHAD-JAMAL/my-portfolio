@@ -3,15 +3,17 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Project from "./components/Project";
 import Contact from "./components/Contact";
 import "./App.css";
+import ProjectList from "./components/Project";
 
 function App() {
   return (
     <>
       <Header />
-      <div id="home"> {/* Added padding to avoid overlap */}
+      <div id="home">
+        {" "}
+        {/* Added padding to avoid overlap */}
         <Home />
       </div>
       <div id="about">
@@ -21,7 +23,7 @@ function App() {
         <Skills />
       </div>
       <div id="projects">
-        <Project />
+        <ProjectList />
       </div>
       <div id="contact">
         <Contact />

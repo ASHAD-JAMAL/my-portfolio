@@ -1,113 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
 import {
+  Avatar,
+  IconButton,
   Navbar,
   Typography,
-  Button,
-  IconButton,
-  Avatar
 } from "@material-tailwind/react";
+import { FaHome, FaUser, FaCode, FaBriefcase, FaPhone } from "react-icons/fa"; // Using icons from Font Awesome
 
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.png";
 
 export function NavbarForDropdownWithMultipleLanguages() {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [activeLink, setActiveLink] = useState(""); // To keep track of the active link
 
-  // Handle resize and scroll events
-  React.useEffect(() => {
-    const handleResize = () => window.innerWidth >= 960 && setOpenNav(false);
-    const handleScroll = () => setOpenNav(false);
+  const navItems = [
+    { name: "Home", href: "#home", icon: <FaHome className="h-6 w-6" /> },
+    { name: "About", href: "#about", icon: <FaUser className="h-6 w-6" /> },
+    { name: "Skills", href: "#skills", icon: <FaCode className="h-6 w-6" /> },
+    {
+      name: "Projects",
+      href: "#projects",
+      icon: <FaBriefcase className="h-6 w-6" />,
+    },
+    {
+      name: "Contact",
+      href: "#contact",
+      icon: <FaPhone className="h-6 w-6" />,
+    },
+  ];
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-medium"
-      >
-        <a href="#home" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
-          Home
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-medium"
-      >
-        <a href="#about" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
-          About
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-medium"
-      >
-        <a href="#skills" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
-          Skills
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-medium"
-      >
-        <a href="#projects" className="flex items-center hover:text-[#40ffa3] hover:font-bold">
-          Projects
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-medium"
-      >
-        <a href="#contact">
-          <Button className="flex items-center text-[#004080] bg-[#40ffa3] font-bold text-md">
-            Let's Talk!
-          </Button>
-        </a>
-      </Typography>
-    </ul>
-  );
+  // Function to handle link click for mobile and desktop
+  const handleLinkClick = (href) => {
+    setActiveLink(href);
+  };
 
   return (
-    <div className="pt-10">
-      <Navbar className="mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header">
+    <div className="pt-2">
+      {/* Desktop Navbar */}
+      <Navbar className="mx-auto max-w-screen-xl px-4 lg:px-8 lg:py-4 shadow-2xl gradient-header w-full hidden md:block">
         <div className="flex items-center justify-between text-white">
           <Typography as="a" href="#" className="cursor-pointer">
-          <Avatar src={logo} alt="avatar" className="filter brightness-0 invert" />
+            <Avatar
+              src={logo}
+              alt="avatar"
+              className="filter brightness-0 invert"
+            />
           </Typography>
-          <div className="mr-4 hidden lg:block">{navList}</div>
-          <IconButton
-            variant="text"
-            className="lg:hidden"
-            onClick={() => setOpenNav(!openNav)}
-          >
-            {openNav ? (
-              <XMarkIcon className="h-6 w-6 text-white" strokeWidth={2} />
-            ) : (
-              <Bars3Icon className="h-6 w-6 text-white" strokeWidth={2} />
-            )}
-          </IconButton>
-        </div>
-        <div className={`lg:hidden ${openNav ? "block" : "hidden"}`}>
-          {navList}
+          <div className="mr-4">
+            <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 w-full">
+              {navItems.map((item, index) => (
+                <Typography
+                  key={index}
+                  as="li"
+                  variant="small"
+                  color="white"
+                  className={`p-1 font-medium ${
+                    activeLink === item.href ? "text-[#40ffa3]" : ""
+                  }`}
+                >
+                  <a
+                    href={item.href}
+                    onClick={() => handleLinkClick(item.href)} // Update active link
+                    className="flex items-center hover:text-[#40ffa3]"
+                  >
+                    {item.icon}
+                    <span className="ml-2">{item.name}</span>
+                  </a>
+                </Typography>
+              ))}
+            </ul>
+          </div>
         </div>
       </Navbar>
+
+      {/* Mobile Navbar */}
+      <div className="lg:hidden fixed bottom-0 left-0 w-full bg-[#040e2a] p-4  shadow-lg h-14 flex justify-around items-center z-50">
+        {navItems.map((item, index) => (
+          <IconButton
+            key={index}
+            className="text-white rounded-full"
+            onClick={() => handleLinkClick(item.href)}
+          >
+            <a
+              href={item.href}
+              className="flex items-center justify-center rounded-full p-2 hover:bg-[#40ffa3]"
+            >
+              {item.icon}
+            </a>
+          </IconButton>
+        ))}
+      </div>
     </div>
   );
 }

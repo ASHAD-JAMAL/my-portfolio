@@ -1,28 +1,24 @@
 import React from "react";
 import proImage from "../assets/skill.png";
 import ProjectBox from "./ProjectBox";
-import BridgeLogo from "../assets/bridgelogo.png";
 import hirevision from "../assets/hirevision.png";
-import hirevisionlogo from "../assets/hirevisionlogo.png";
 function Project() {
   const projects = [
     {
       src: proImage,
       title:
         "A MERN stack web application that connects users directly with skilled workers. Features include user authentication, SMTP server integration for email notifications, and real-time communication between users and workers. The app is fully responsive, providing a seamless experience across all devices.",
-      logo: BridgeLogo,
       heading: "Skills-Bridge",
-      link:"http://ashad-jamal.me/skillBridge/",
-      repolink:"https://github.com/ASHAD-JAMAL/skillBridge.git",
+      link: "http://ashad-jamal.me/skillBridge/",
+      repolink: "https://github.com/ASHAD-JAMAL/skillBridge.git",
     },
     {
       src: hirevision,
       title:
         "HireVision is a human resources service company that focuses on helping small and midsize businesses optimize their hiring processes. They offer a wide range of HR services, from hiring and retaining employees to providing fully integrated HR management solutions. Unlike traditional staffing agencies, HireVision acts as an extension of a company’s HR department, providing tailored services to fit the specific needs of their clients.",
-      logo: hirevisionlogo,
       heading: "Hire-Vision",
-      link:"https://hire-vision.vercel.app/",
-      repolink:"https://github.com/ASHAD-JAMAL/HireVision.git",
+      link: "https://hire-vision.vercel.app/",
+      repolink: "https://github.com/ASHAD-JAMAL/HireVision.git",
     },
   ];
   return (
@@ -38,7 +34,7 @@ function Project() {
           </h4>
         </div>
       </div>
-      <div className="second-section py-10">
+      <div className="second-section py-10 flex flex-wrap justify-between gap-y-10">
         {projects.map((project, index) => (
           <ProjectBox
             key={index}

@@ -29,16 +29,19 @@ function Skills() {
   ];
 
   return (
-    <div id="skill" className="md:py-20 items-center justify-between md:px-20 md:pt-20">
+    <div
+      id="skill"
+      className="md:py-20 items-center justify-between md:px-20 md:pt-20"
+    >
       <div className="first-section flex flex-col items-center md:items-start md:w-1/2">
-        <div className="flex items-center gap-4  pt-10">
+        <div className="flex items-center gap-4 pt-10">
           <hr className="w-32 h-2 text-white font-bold hidden md:block" />
           <h4 className="text-[#40ffa3] font-bold md:text-lg text-3xl">
             Skills
           </h4>
         </div>
       </div>
-      <div className="second-section grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-8 py-10">
+      <div className="second-section grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-y-8 py-10">
         {skills.map((skill, index) => (
           <Box key={index} src={skill.src} title={skill.title} />
         ))}
